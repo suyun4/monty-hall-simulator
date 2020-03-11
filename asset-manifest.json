@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/monty-hall-simulator/static/css/main.e251c573.chunk.css",
+    "main.js": "/monty-hall-simulator/static/js/main.11a4b2a0.chunk.js",
+    "main.js.map": "/monty-hall-simulator/static/js/main.11a4b2a0.chunk.js.map",
+    "runtime-main.js": "/monty-hall-simulator/static/js/runtime-main.4902136a.js",
+    "runtime-main.js.map": "/monty-hall-simulator/static/js/runtime-main.4902136a.js.map",
+    "static/js/2.3e62e098.chunk.js": "/monty-hall-simulator/static/js/2.3e62e098.chunk.js",
+    "static/js/2.3e62e098.chunk.js.map": "/monty-hall-simulator/static/js/2.3e62e098.chunk.js.map",
+    "index.html": "/monty-hall-simulator/index.html",
+    "precache-manifest.c879747006e32e430eea0c3e53166873.js": "/monty-hall-simulator/precache-manifest.c879747006e32e430eea0c3e53166873.js",
+    "service-worker.js": "/monty-hall-simulator/service-worker.js",
+    "static/css/main.e251c573.chunk.css.map": "/monty-hall-simulator/static/css/main.e251c573.chunk.css.map",
+    "static/js/2.3e62e098.chunk.js.LICENSE.txt": "/monty-hall-simulator/static/js/2.3e62e098.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4902136a.js",
+    "static/js/2.3e62e098.chunk.js",
+    "static/css/main.e251c573.chunk.css",
+    "static/js/main.11a4b2a0.chunk.js"
+  ]
+}

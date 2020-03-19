@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/monty-hall-simulator/precache-manifest.d06c9e8e8b7af644db4fbccdd5e147a9.js"
+  "/monty-hall-simulator/precache-manifest.cc21a849c7f5f61ff4fc2deda3700af8.js"
 );
 
 self.addEventListener('message', (event) => {

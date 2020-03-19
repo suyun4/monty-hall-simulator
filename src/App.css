@@ -5,61 +5,139 @@
 }
 
 html,
-#root,
 body {
-  height: 100%;
+  font-family: "Trade Winds";
+  min-height: 100vh;
+  background-color: #e2f3f7;
 }
+
+#root {
+  display: block;
+  overflow: auto;
+}
+
 .App {
-  height: 100%;
-  position: absolute;
-  background-color: #d5c1fa;
+  position: relative;
+}
+
+.App-container {
+  width: 90%;
+  margin: auto;
+  background-color: #e2f5f2;
 }
 
 .App-header {
-  background-color: #4a5df1;
   display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: #e2f5f2;
   min-height: 100px;
   font-size: 30px;
   font-weight: bold;
-  color: #ffffff;
+  color: #444444;
 }
 
 h1 {
   margin: auto;
 }
 
-.App-container {
-  position: relative;
-  background-color: #b897f8;
-  width: 90%;
-  margin: auto;
-  padding: 10px 10px;
-}
-
-.grid-container {
+.App-body {
   display: grid;
-  grid-template-columns: 60% 40%;
+  grid-gap: 30px;
+  padding: 30px;
 }
 
 .App-introduction {
+  position: relative;
+  border: 2px solid #444444;
   text-align: justify;
+  padding: 30px;
 }
 
-.minimize-button {
-  height: 20px;
-  width: 20px;
-  background-color: #4a5df1;
+.active,
+.accordian-button {
+  height: 30px;
+  width: 100%;
+  background-color: #b8e7de;
   color: #ffffff;
+  font-family: "Trade Winds";
+  text-align: left;
+  padding-left: 10px;
+  border: none;
+  outline: none;
   border-radius: 4px;
   border-style: none;
 }
 
-.minimize-button:hover {
+.accordian-button:hover {
   background-color: #0b34e0;
 }
 
+.App-introduction-text {
+  display: none;
+  overflow: hidden;
+}
+
+.App-game-intro {
+  text-align: center;
+  color: #444444;
+  font-size: 25px;
+}
+
+.App-game-text {
+  text-align: center;
+  color: #444444;
+  font-size: 30px;
+}
+
+.App-game-record {
+}
+
+.App-game-grid-container {
+  display: grid;
+  margin: auto;
+  grid-gap: 50px;
+  grid-template-columns: 1fr 1fr 1fr;
+  min-height: 250px;
+}
+
+.door {
+}
+
+.door-option {
+  display: flex;
+  justify-content: center;
+  height: 300px;
+  width: 225px;
+  background-color: #64280d;
+  color: white;
+  font-size: 30px;
+  padding-top: 75px;
+}
+
+.door-way {
+  position: relative;
+  background-color: #333333;
+  height: 300px;
+  width: 225px;
+}
+.door-door {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  transform: skew(0deg, 10deg);
+  height: 300px;
+  width: 225px;
+  top: 20px;
+  padding-top: 75px;
+  font-size: 20px;
+  background-color: #64280d;
+  color: white;
+}
 .App-form {
   margin: auto;
+  margin-top: 50px;
+  position: relative;
   width: 50%;
   text-align: center;
   font-size: 18px;

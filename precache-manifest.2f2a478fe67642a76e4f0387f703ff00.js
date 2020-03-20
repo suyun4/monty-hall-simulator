@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1fbe95d232da2e94e02805caa1c9e927",
+    "revision": "5f3084f1203663f1f4b33333c4df1946",
     "url": "/monty-hall-simulator/index.html"
   },
   {
-    "revision": "1e2d56abc21e1c8ea2b5",
-    "url": "/monty-hall-simulator/static/css/main.2439b3f9.chunk.css"
+    "revision": "8a828bf230de66fd3312",
+    "url": "/monty-hall-simulator/static/css/main.0a75e804.chunk.css"
   },
   {
     "revision": "a66a2d4f3a8fd42f344a",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/monty-hall-simulator/static/js/2.3e62e098.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "1e2d56abc21e1c8ea2b5",
-    "url": "/monty-hall-simulator/static/js/main.cbef169b.chunk.js"
+    "revision": "8a828bf230de66fd3312",
+    "url": "/monty-hall-simulator/static/js/main.9c8843ef.chunk.js"
   },
   {
     "revision": "bbba42f5aa50c3943425",

@@ -76,29 +76,32 @@ const App = () => {
         </header>
         <div className="App-body">
           <div className="App-introduction">
-            <button
-              className="accordian-button"
+            <div
+              className="accordian-header"
               onClick={() => {
                 setShowIntroduction(!showIntroduction);
               }}
             >
-              Introduction: {showIntroduction + 1}
-              gameTries: {gameClicks}
-            </button>
-            <div className="App-introduction-text">
-              <p>
-                The Monty Hall problem is an interesting statistical paradox
-                based on the American TV game show, Let's make a Deal. The game
-                show host would ask a contestant to choose 1 out of 3 doors, two
-                doors which hid a goat each, and one that revealed a new car.
-                The host will then reveal a door that the contestant did not
-                pick and had a goat behind it, and then ask the contestant if
-                they would like to switch their choice. Although many would say
-                all doors had an equal chance to lead to the prize of a car,
-                statisticians found that this was not the case. This site will
-                simulate many times the outcomes to help show that switching is
-                a more favorable choice than staying on an initial decision
-              </p>
+              <div className="App-triangle"></div>
+              Introduction:
+              {showIntroduction && (
+                <div className="accordian-text">
+                  <p>
+                    The Monty Hall problem is an interesting statistical paradox
+                    based on the American TV game show, Let's make a Deal. The
+                    game show host would ask a contestant to choose 1 out of 3
+                    doors, two doors which hid a goat each, and one that
+                    revealed a new car. The host will then reveal a door that
+                    the contestant did not pick and had a goat behind it, and
+                    then ask the contestant if they would like to switch their
+                    choice. Although many would say all doors had an equal
+                    chance to lead to the prize of a car, statisticians found
+                    that this was not the case. This site will simulate many
+                    times the outcomes to help show that switching is a more
+                    favorable choice than staying on an initial decision
+                  </p>
+                </div>
+              )}
             </div>
           </div>
           <div className="App-game-intro">
@@ -184,17 +187,35 @@ const App = () => {
                     }
                   }}
                 >
-                  {gameClicks === 0 && "1"}
-                  {gameClicks === 1 && firstDoorChoice === 0 && "Stay"}
-                  {gameClicks === 1 && firstDoorChoice !== 0 && "Switch"}
+                  {gameClicks === 0 && <div className="door-text">1</div>}
+                  {gameClicks === 1 && firstDoorChoice === 0 && (
+                    <div className="door-text">Stay</div>
+                  )}
+                  {gameClicks === 1 && firstDoorChoice !== 0 && (
+                    <div className="door-text">Switch</div>
+                  )}
+                  <div class="door-knob"></div>
                 </div>
               ) : (
                 <div className="door-object">
                   <div className="door-way">
                     {gameState[0] ? (
-                      <div className="door-door"> Door 1 Wins!</div>
+                      <div className="door-door">
+                        <div className="door-text">
+                          Door 1<br />
+                          Wins!
+                        </div>
+                        <div class="door-knob"></div>
+                      </div>
                     ) : (
-                      <div className="door-door"> Door 1 is incorrect!</div>
+                      <div className="door-door">
+                        <div className="door-text">
+                          Door 1 is
+                          <br />
+                          incorrect!
+                        </div>
+                        <div class="door-knob"></div>
+                      </div>
                     )}
                   </div>
                 </div>
@@ -235,17 +256,35 @@ const App = () => {
                     }
                   }}
                 >
-                  {gameClicks === 0 && "2"}
-                  {gameClicks === 1 && firstDoorChoice === 1 && "Stay"}
-                  {gameClicks === 1 && firstDoorChoice !== 1 && "Switch"}
+                  {gameClicks === 0 && <div className="door-text">2</div>}
+                  {gameClicks === 1 && firstDoorChoice === 0 && (
+                    <div className="door-text">Stay</div>
+                  )}
+                  {gameClicks === 1 && firstDoorChoice !== 0 && (
+                    <div className="door-text">Switch</div>
+                  )}
+                  <div class="door-knob"></div>
                 </div>
               ) : (
                 <div className="door-object">
                   <div className="door-way">
                     {gameState[1] ? (
-                      <div className="door-door"> Door 2 Wins!</div>
+                      <div className="door-door">
+                        <div className="door-text">
+                          Door 2<br />
+                          Wins!
+                        </div>
+                        <div class="door-knob"></div>
+                      </div>
                     ) : (
-                      <div className="door-door"> Door 2 is incorrect</div>
+                      <div className="door-door">
+                        <div className="door-text">
+                          Door 2 is
+                          <br />
+                          incorrect!
+                        </div>
+                        <div class="door-knob"></div>
+                      </div>
                     )}
                   </div>
                 </div>
@@ -286,17 +325,35 @@ const App = () => {
                     }
                   }}
                 >
-                  {gameClicks === 0 && "3"}
-                  {gameClicks === 1 && firstDoorChoice === 2 && "Stay"}
-                  {gameClicks === 1 && firstDoorChoice !== 2 && "Switch"}
+                  {gameClicks === 0 && <div className="door-text">3</div>}
+                  {gameClicks === 1 && firstDoorChoice === 0 && (
+                    <div className="door-text">Stay</div>
+                  )}
+                  {gameClicks === 1 && firstDoorChoice !== 0 && (
+                    <div className="door-text">Switch</div>
+                  )}
+                  <div class="door-knob"></div>
                 </div>
               ) : (
                 <div className="door-object">
                   <div className="door-way">
                     {gameState[2] ? (
-                      <div className="door-door"> Door 3 Wins!</div>
+                      <div className="door-door">
+                        <div className="door-text">
+                          Door 3<br />
+                          Wins!
+                        </div>
+                        <div class="door-knob"></div>
+                      </div>
                     ) : (
-                      <div className="door-door"> Door 3 is incorrect!</div>
+                      <div className="door-door">
+                        <div className="door-text">
+                          Door 3 is
+                          <br />
+                          incorrect!
+                        </div>
+                        <div class="door-knob"></div>
+                      </div>
                     )}
                   </div>
                 </div>

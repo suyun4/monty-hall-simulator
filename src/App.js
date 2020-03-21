@@ -104,25 +104,27 @@ const App = () => {
               )}
             </div>
           </div>
-          <div className="App-game-intro">
-            Try out the game! Choose a door then decide to stay or switch
-          </div>
-          <div className="App-game-text">
-            {gameClicks === 0 && <div>Pick a door!</div>}
-            {gameClicks === 1 && (
-              <div>
-                You picked door {firstDoorChoice + 1}. Monty has revealed a
-                different door. Click a door to either stay or switch.
-              </div>
-            )}
-            {gameClicks === 2 && (
-              <div>
-                You picked door {firstDoorChoice + 1}, decided to{" "}
-                {stayed ? "stay" : "switch"}, and chose the{" "}
-                {gameState[secondDoorChoice] ? "winning" : "losing"} door. Click
-                to try again
-              </div>
-            )}
+          <div className="App-game-text-container">
+            <div className="App-game-intro">
+              Try out the game or run a simulation!
+            </div>
+            <div className="App-game-text">
+              {gameClicks === 0 && <div>Pick a door!</div>}
+              {gameClicks === 1 && (
+                <div>
+                  You picked door {firstDoorChoice + 1}. Monty has revealed a
+                  different door. Click a door to either stay or switch.
+                </div>
+              )}
+              {gameClicks === 2 && (
+                <div>
+                  You picked door {firstDoorChoice + 1}, decided to{" "}
+                  {stayed ? "stay" : "switch"}, and chose the{" "}
+                  {gameState[secondDoorChoice] ? "winning" : "losing"} door.
+                  Click to try again
+                </div>
+              )}
+            </div>
             {
               //<div classsName="App-game-record">Record: {gameScore}</div>//
             }
@@ -194,7 +196,8 @@ const App = () => {
                   {gameClicks === 1 && firstDoorChoice !== 0 && (
                     <div className="door-text">Switch</div>
                   )}
-                  <div class="door-knob"></div>
+                  <div className="door-knob"></div>
+                  <div className="door-panel"></div>
                 </div>
               ) : (
                 <div className="door-object">
@@ -205,7 +208,8 @@ const App = () => {
                           Door 1<br />
                           Wins!
                         </div>
-                        <div class="door-knob"></div>
+                        <div className="door-knob"></div>
+                        <div className="door-panel"></div>
                       </div>
                     ) : (
                       <div className="door-door">
@@ -214,7 +218,8 @@ const App = () => {
                           <br />
                           incorrect!
                         </div>
-                        <div class="door-knob"></div>
+                        <div className="door-knob"></div>
+                        <div className="door-panel"></div>
                       </div>
                     )}
                   </div>
@@ -257,13 +262,14 @@ const App = () => {
                   }}
                 >
                   {gameClicks === 0 && <div className="door-text">2</div>}
-                  {gameClicks === 1 && firstDoorChoice === 0 && (
+                  {gameClicks === 1 && firstDoorChoice === 1 && (
                     <div className="door-text">Stay</div>
                   )}
-                  {gameClicks === 1 && firstDoorChoice !== 0 && (
+                  {gameClicks === 1 && firstDoorChoice !== 1 && (
                     <div className="door-text">Switch</div>
                   )}
-                  <div class="door-knob"></div>
+                  <div className="door-knob"></div>
+                  <div className="door-panel"></div>
                 </div>
               ) : (
                 <div className="door-object">
@@ -274,7 +280,8 @@ const App = () => {
                           Door 2<br />
                           Wins!
                         </div>
-                        <div class="door-knob"></div>
+                        <div className="door-knob"></div>
+                        <div className="door-panel"></div>
                       </div>
                     ) : (
                       <div className="door-door">
@@ -283,7 +290,8 @@ const App = () => {
                           <br />
                           incorrect!
                         </div>
-                        <div class="door-knob"></div>
+                        <div className="door-knob"></div>
+                        <div className="door-panel"></div>
                       </div>
                     )}
                   </div>
@@ -326,13 +334,14 @@ const App = () => {
                   }}
                 >
                   {gameClicks === 0 && <div className="door-text">3</div>}
-                  {gameClicks === 1 && firstDoorChoice === 0 && (
+                  {gameClicks === 1 && firstDoorChoice === 2 && (
                     <div className="door-text">Stay</div>
                   )}
-                  {gameClicks === 1 && firstDoorChoice !== 0 && (
+                  {gameClicks === 1 && firstDoorChoice !== 2 && (
                     <div className="door-text">Switch</div>
                   )}
-                  <div class="door-knob"></div>
+                  <div className="door-knob"></div>
+                  <div className="door-panel"></div>
                 </div>
               ) : (
                 <div className="door-object">
@@ -340,10 +349,12 @@ const App = () => {
                     {gameState[2] ? (
                       <div className="door-door">
                         <div className="door-text">
+                          <div className="door-panel"></div>
                           Door 3<br />
                           Wins!
                         </div>
-                        <div class="door-knob"></div>
+                        <div className="door-knob"></div>
+                        <div className="door-panel"></div>
                       </div>
                     ) : (
                       <div className="door-door">
@@ -352,7 +363,7 @@ const App = () => {
                           <br />
                           incorrect!
                         </div>
-                        <div class="door-knob"></div>
+                        <div className="door-knob"></div>
                       </div>
                     )}
                   </div>
@@ -364,7 +375,7 @@ const App = () => {
             <div className="App-form">
               <div className="App-sim-select">
                 <label>
-                  How many simulations?
+                  How many simulations? {<br />}
                   <select
                     value={simulations}
                     onChange={event => setSimulations(event.target.value)}

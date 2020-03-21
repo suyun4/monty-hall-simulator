@@ -6,12 +6,20 @@
 
 html,
 body {
-  font-family: "Trade Winds";
+  background-color: #eff9fc;
+
   min-height: 100vh;
-  background-color: #e2f3f7;
+
+  font-family: "Trade Winds";
 }
 
 #root {
+  --color-dark-text-color: #192972;
+  --color-door-door: #1e436d;
+  --color-door-panel: rgb(56, 95, 146);
+  --color-door-knob: #f8d408;
+  --color-door-window: #ddecf0;
+
   display: block;
   overflow: auto;
 }
@@ -21,20 +29,25 @@ body {
 }
 
 .App-container {
-  width: 90%;
-  margin: auto;
   background-color: #e2f5f2;
+
+  margin: auto;
+  width: 90%;
+  max-width: 1200px;
 }
 
 .App-header {
+  background-color: #e2f5f2;
+  color: var(--color-dark-text-color);
+
   display: flex;
   justify-content: center;
   align-content: center;
-  background-color: #e2f5f2;
   min-height: 100px;
+  padding-top: 20px;
+
   font-size: 30px;
   font-weight: bold;
-  color: #444444;
 }
 
 h1 {
@@ -49,31 +62,31 @@ h1 {
 
 .App-introduction {
   position: relative;
-  border: 2px solid #444444;
   text-align: justify;
   padding: 30px;
 }
 
 .accordian-header {
+  color: var(--color-dark-text-color);
+  background-color: #80d7e2b2;
+
   width: 100%;
-  color: #ffffff;
-  background-color: #77d8d0;
+  padding: 10px;
+  border-radius: 4px;
+
   font-family: "Trade Winds";
   text-align: left;
-  padding: 10px;
-  border: none;
-  outline: none;
-  border-radius: 4px;
-  border-style: none;
 }
 .App-triangle {
-  margin-right: 10px;
   display: inline-block;
   width: 0;
   height: 0;
+  margin-right: 10px;
+
+  border-left: 9px solid green;
   border-top: 9px solid transparent;
   border-bottom: 9px solid transparent;
-  border-left: 9px solid green;
+
   transform: rotate(90deg);
 }
 
@@ -81,15 +94,20 @@ h1 {
   overflow: hidden;
 }
 
+.App-game-text-container {
+  min-height: 160px;
+}
+
 .App-game-intro {
-  text-align: center;
-  color: #444444;
+  color: var(--color-dark-text-color);
   font-size: 25px;
+  text-align: center;
 }
 
 .App-game-text {
+  color: var(--color-dark-text-color);
+  margin-bottom: 30px;
   text-align: center;
-  color: #444444;
   font-size: 30px;
 }
 
@@ -108,57 +126,86 @@ h1 {
 }
 
 .door-option {
+  background-color: var(--color-door-door);
+
   position: relative;
-  text-align: center;
   height: 300px;
   width: 225px;
-  background-color: #64280d;
-  font-size: 30px;
   padding-top: 50px;
+
+  text-align: center;
+  font-size: 30px;
 }
 
 .door-text {
+  background-color: var(--color-door-window);
+  color: var(--color-dark-text-color);
+
   margin: auto;
-  background-color: gold;
-  color: #666666;
   width: 80%;
+  border: rgba(189, 221, 223, 0.651) 5px solid;
+}
+
+.door-panel {
+  background-color: var(--color-door-panel);
+
+  position: absolute;
+  height: 35%;
+  width: 80%;
+  bottom: 10px;
+  left: 10%;
+  border: rgba(44, 53, 90, 0.199) 5px solid;
 }
 .door-knob {
+  background-color: var(--color-door-knob);
+
+  position: absolute;
   height: 25px;
   width: 25px;
   top: 45%;
   left: 80%;
-  background-color: gold;
   border-radius: 50%;
-  position: absolute;
 }
 
 .door-way {
-  position: relative;
   background-color: #222222;
+
+  position: relative;
   height: 300px;
   width: 225px;
 }
 .door-door {
+  background-color: var(--color-door-door);
+
   position: absolute;
-  transform: skew(0deg, 10deg);
   height: 300px;
   width: 200px;
   top: 20px;
   padding-top: 50px;
+
+  transform: skew(0deg, 10deg);
+
   text-align: center;
   font-size: 18px;
-  background-color: #64280d;
 }
+
+.door-option,
+.door-door {
+  border: rgb(38, 59, 90) 5px solid;
+}
+
 .App-form {
+  color: var(--color-dark-text-color);
+
   margin: auto;
-  margin-top: 50px;
   position: relative;
   width: 50%;
+  border: var(--color-dark-text-color) 2px solid;
+  border-radius: 5px;
+
   text-align: center;
   font-size: 18px;
   font-weight: bold;
-  border: 2px solid #444444;
 }
 
 .App-sim-select {
@@ -170,24 +217,28 @@ h1 {
 }
 
 .button {
-  background-color: #4a5df1;
-  color: #ffffff;
-  border-radius: 4px;
-  transition-duration: 0.2s;
-  text-align: center;
-  font-size: 24px;
-  padding-bottom: 20px;
-  font-weight: bold;
+  background-color: #3f4ec2;
+  color: #f1f8ff;
+
   padding: 10px 20px;
-  border-style: none;
   margin-bottom: 10px;
+  border-radius: 5px;
+  border-style: none;
+
+  transition-duration: 0.2s;
+
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
 }
 
 .button:hover {
-  background-color: #0b34e0;
+  background-color: var(--color-dark-text-color);
 }
 
 .App-results {
+  color: var(--color-dark-text-color);
+
   text-align: center;
 }
 
@@ -196,18 +247,19 @@ h1 {
 }
 
 table {
+  background-color: #c8eaf377;
+
   margin: auto;
   min-width: 800px;
-  border-collapse: collapse;
-  background-color: #efe6fd;
   border: thin solid #797979;
+  border-collapse: collapse;
   overflow-x: auto;
 }
 
 th {
-  text-align: center;
   border-bottom: thin solid black;
   padding-top: 5px;
+  text-align: center;
 }
 
 td {

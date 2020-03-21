@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/monty-hall-simulator/static/css/main.0a75e804.chunk.css",
-    "main.js": "/monty-hall-simulator/static/js/main.9c8843ef.chunk.js",
-    "main.js.map": "/monty-hall-simulator/static/js/main.9c8843ef.chunk.js.map",
+    "main.css": "/monty-hall-simulator/static/css/main.0220058b.chunk.css",
+    "main.js": "/monty-hall-simulator/static/js/main.dd923b3c.chunk.js",
+    "main.js.map": "/monty-hall-simulator/static/js/main.dd923b3c.chunk.js.map",
     "runtime-main.js": "/monty-hall-simulator/static/js/runtime-main.4902136a.js",
     "runtime-main.js.map": "/monty-hall-simulator/static/js/runtime-main.4902136a.js.map",
     "static/js/2.3e62e098.chunk.js": "/monty-hall-simulator/static/js/2.3e62e098.chunk.js",
     "static/js/2.3e62e098.chunk.js.map": "/monty-hall-simulator/static/js/2.3e62e098.chunk.js.map",
     "index.html": "/monty-hall-simulator/index.html",
-    "precache-manifest.2f2a478fe67642a76e4f0387f703ff00.js": "/monty-hall-simulator/precache-manifest.2f2a478fe67642a76e4f0387f703ff00.js",
+    "precache-manifest.2f818841b03a3c5457b4cd38860956b5.js": "/monty-hall-simulator/precache-manifest.2f818841b03a3c5457b4cd38860956b5.js",
     "service-worker.js": "/monty-hall-simulator/service-worker.js",
-    "static/css/main.0a75e804.chunk.css.map": "/monty-hall-simulator/static/css/main.0a75e804.chunk.css.map",
+    "static/css/main.0220058b.chunk.css.map": "/monty-hall-simulator/static/css/main.0220058b.chunk.css.map",
     "static/js/2.3e62e098.chunk.js.LICENSE.txt": "/monty-hall-simulator/static/js/2.3e62e098.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.4902136a.js",
     "static/js/2.3e62e098.chunk.js",
-    "static/css/main.0a75e804.chunk.css",
-    "static/js/main.9c8843ef.chunk.js"
+    "static/css/main.0220058b.chunk.css",
+    "static/js/main.dd923b3c.chunk.js"
   ]
 }

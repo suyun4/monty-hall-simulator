@@ -3,7 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+html {
+  overflow-y: scroll;
+}
 html,
 body {
   background-color: #eff9fc;
@@ -33,7 +35,9 @@ body {
 
   margin: auto;
   width: 90%;
+  min-height: 100vh;
   max-width: 1200px;
+  min-width: 1000px;
 }
 
 .App-header {
@@ -61,21 +65,22 @@ h1 {
 }
 
 .App-introduction {
+  width: 90%;
   position: relative;
+  margin: auto;
   text-align: justify;
   padding: 30px;
 }
 
 .accordian-header {
   color: var(--color-dark-text-color);
-  background-color: #80d7e2b2;
+  background-color: #a8dce288;
 
   width: 100%;
   padding: 10px;
   border-radius: 4px;
 
-  font-family: "Trade Winds";
-  text-align: left;
+  text-align: justify;
 }
 .App-triangle {
   display: inline-block;
@@ -83,14 +88,16 @@ h1 {
   height: 0;
   margin-right: 10px;
 
-  border-left: 9px solid green;
+  border-left: 9px solid rgb(63, 61, 192);
   border-top: 9px solid transparent;
   border-bottom: 9px solid transparent;
 
   transform: rotate(90deg);
+  transition: transform 0.4s;
 }
 
 .accordian-text {
+  transition: height 0.2s;
   overflow: hidden;
 }
 
@@ -196,8 +203,8 @@ h1 {
 
 .App-form {
   color: var(--color-dark-text-color);
-
   margin: auto;
+  margin-top: 20px;
   position: relative;
   width: 50%;
   border: var(--color-dark-text-color) 2px solid;
@@ -236,6 +243,26 @@ h1 {
   background-color: var(--color-dark-text-color);
 }
 
+.clear-button {
+  background-color: #ce6d1e;
+  color: #f1f8ff;
+
+  margin: auto;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border-style: none;
+
+  transition-duration: 0.2s;
+
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.clear-button:hover {
+  background-color: #8f4d18;
+}
+
 .App-results {
   color: var(--color-dark-text-color);
 
@@ -243,7 +270,6 @@ h1 {
 }
 
 .App-table {
-  width: 100%;
 }
 
 table {
@@ -253,7 +279,6 @@ table {
   min-width: 800px;
   border: thin solid #797979;
   border-collapse: collapse;
-  overflow-x: auto;
 }
 
 th {

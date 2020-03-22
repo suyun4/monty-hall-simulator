@@ -3,15 +3,15 @@ import "./App.css";
 
 const App = () => {
   const [showIntroduction, setShowIntroduction] = useState(true);
-
-  const [gameScore, setGameScore] = useState(null);
+  const [isTriangleRight, setIsTriangleRight] = useState(false);
+  //const [gameScore, setGameScore] = useState(null);
 
   const [gameClicks, setGameClicks] = useState(0);
   const [gameState, setGameState] = useState(getNewGameState());
   const [doorsState, setDoorsState] = useState([false, false, false]);
   const [firstDoorChoice, setFirstDoorChoice] = useState(0);
   const [secondDoorChoice, setSecondDoorChoice] = useState(0);
-  const [notShownDoor, setNotShownDoor] = useState(0);
+  //const [notShownDoor, setNotShownDoor] = useState(0);
   const [stayed, setStayed] = useState(false);
   const [simulations, setSimulations] = useState(1000);
   const [doors, setDoors] = useState(3);
@@ -80,28 +80,39 @@ const App = () => {
               className="accordian-header"
               onClick={() => {
                 setShowIntroduction(!showIntroduction);
+                setIsTriangleRight(!isTriangleRight);
               }}
             >
-              <div className="App-triangle"></div>
-              Introduction:
-              {showIntroduction && (
-                <div className="accordian-text">
-                  <p>
-                    The Monty Hall problem is an interesting statistical paradox
-                    based on the American TV game show, Let's make a Deal. The
-                    game show host would ask a contestant to choose 1 out of 3
-                    doors, two doors which hid a goat each, and one that
-                    revealed a new car. The host will then reveal a door that
-                    the contestant did not pick and had a goat behind it, and
-                    then ask the contestant if they would like to switch their
-                    choice. Although many would say all doors had an equal
-                    chance to lead to the prize of a car, statisticians found
-                    that this was not the case. This site will simulate many
-                    times the outcomes to help show that switching is a more
-                    favorable choice than staying on an initial decision
-                  </p>
-                </div>
-              )}
+              <span
+                className="App-triangle"
+                style={
+                  isTriangleRight
+                    ? { transform: "rotate(0deg)" }
+                    : { transform: "rotate(90deg)" }
+                }
+              ></span>
+              <span>Introduction:</span>
+              <div
+                className="accordian-text"
+                style={
+                  showIntroduction ? { height: "140px" } : { height: "0px" }
+                }
+              >
+                <p>
+                  The Monty Hall problem is an interesting statistical paradox
+                  based on the American TV game show, Let's make a Deal. The
+                  game show host would ask a contestant to choose 1 out of 3
+                  doors, two doors which hid a goat each, and one that revealed
+                  a new car. The host will then reveal a door that the
+                  contestant did not pick and had a goat behind it, and then ask
+                  the contestant if they would like to switch their choice.
+                  Although many would say all doors had an equal chance to lead
+                  to the prize of a car, statisticians found that this was not
+                  the case. This site will simulate many times the outcomes to
+                  help show that switching is a more favorable choice than
+                  staying on an initial decision
+                </p>
+              </div>
             </div>
           </div>
           <div className="App-game-text-container">
@@ -165,14 +176,14 @@ const App = () => {
                       if (gameState[0]) {
                         let shownDoor = Math.floor(Math.random() * 2) + 1;
                         newDoorsState[shownDoor] = true;
-                        setNotShownDoor(3 - shownDoor);
+                        //setNotShownDoor(3 - shownDoor);
                       } else {
                         if (gameState[1]) {
                           newDoorsState[2] = true;
-                          setNotShownDoor(1);
+                          //setNotShownDoor(1);
                         } else {
                           newDoorsState[1] = true;
-                          setNotShownDoor(2);
+                          //setNotShownDoor(2);
                         }
                       }
                       setDoorsState(newDoorsState);
@@ -237,14 +248,14 @@ const App = () => {
                       if (gameState[1]) {
                         let shownDoor = Math.floor(Math.random() * 2) * 2;
                         newDoorsState[shownDoor] = true;
-                        setNotShownDoor(2 - shownDoor);
+                        //setNotShownDoor(2 - shownDoor);
                       } else {
                         if (gameState[0]) {
                           newDoorsState[2] = true;
-                          setNotShownDoor(0);
+                          //setNotShownDoor(0);
                         } else {
                           newDoorsState[0] = true;
-                          setNotShownDoor(2);
+                          //setNotShownDoor(2);
                         }
                       }
                       setDoorsState(newDoorsState);
@@ -309,14 +320,14 @@ const App = () => {
                       if (gameState[2]) {
                         let shownDoor = Math.floor(Math.random() * 2);
                         newDoorsState[shownDoor] = true;
-                        setNotShownDoor(1 - shownDoor);
+                        //setNotShownDoor(1 - shownDoor);
                       } else {
                         if (gameState[0]) {
                           newDoorsState[1] = true;
-                          setNotShownDoor(0);
+                          //setNotShownDoor(0);
                         } else {
                           newDoorsState[0] = true;
-                          setNotShownDoor(1);
+                          //setNotShownDoor(1);
                         }
                       }
                       setDoorsState(newDoorsState);
@@ -364,6 +375,7 @@ const App = () => {
                           incorrect!
                         </div>
                         <div className="door-knob"></div>
+                        <div className="door-panel"></div>
                       </div>
                     )}
                   </div>
@@ -467,6 +479,12 @@ const App = () => {
           </div>
           {simResults && (
             <div className="App-results">
+              <button
+                className="clear-button"
+                onClick={() => setSimResults(null)}
+              >
+                Clear Table
+              </button>
               <h2>Results</h2>
               <div>
                 {simResults.simulations} completed for {simResults.doors} doors
